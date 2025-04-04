@@ -4,14 +4,18 @@ plugins {
 }
 
 group = 'org.kazak'
-version = '1.1-SNAPSHOT'
+version = '1.2-SNAPSHOT'
 
 repositories {
     mavenLocal()
     mavenCentral()
 }
 
+def springVersion = '3.4.4'
+
 dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-aop:${springVersion}"
 }
 
 publishing {
@@ -20,6 +24,7 @@ publishing {
             groupId = rootProject.getGroup()
             artifactId = rootProject.getName()
             version = rootProject.getVersion()
+
             from components.java
         }
     }

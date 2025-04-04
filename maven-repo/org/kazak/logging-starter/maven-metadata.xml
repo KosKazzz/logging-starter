@@ -3,11 +3,12 @@
   <groupId>org.kazak</groupId>
   <artifactId>logging-starter</artifactId>
   <versioning>
-    <latest>1.1-SNAPSHOT</latest>
+    <latest>1.2-SNAPSHOT</latest>
     <versions>
       <version>1.0-SNAPSHOT</version>
       <version>1.1-SNAPSHOT</version>
+      <version>1.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20250216190928</lastUpdated>
+    <lastUpdated>20250404075907</lastUpdated>
   </versioning>
 </metadata>
