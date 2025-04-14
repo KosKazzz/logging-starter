@@ -24,14 +24,12 @@ public class WebLoggingRequestBodyAdvice extends RequestBodyAdviceAdapter {
 
     private static final Logger log = LoggerFactory.getLogger(WebLoggingRequestBodyAdvice.class);
 
-
     @Override
     public Object afterBodyRead(Object body, HttpInputMessage inputMessage, MethodParameter parameter, Type targetType, Class<? extends HttpMessageConverter<?>> converterType) {
         String requestMethod = request.getMethod();
         String requestURI = request.getRequestURI() + requestFormatter.formatQueryString(request);
 
         log.info("Тело запроса : {},{},{}", requestMethod, requestURI, body);
-
 
         return super.afterBodyRead(body, inputMessage, parameter, targetType, converterType);
     }
