@@ -12,7 +12,9 @@ import java.util.stream.Collectors;
 public class RequestFormatter {
 
     public String inlineHeaders(HttpServletRequest request) {
-        Map<String, String> headersMap = Collections.list(request.getHeaderNames()).stream().collect(Collectors.toMap(it -> it, request::getHeader));
+        Map<String, String> headersMap = Collections.list(request.getHeaderNames())
+                .stream()
+                .collect(Collectors.toMap(it -> it, request::getHeader));
         String headers = headersMap.entrySet().stream()
                 .map(entry -> {
                     String headerName = entry.getKey();
@@ -24,7 +26,7 @@ public class RequestFormatter {
         return "headers = {" + headers + "}";
     }
 
-    public   String formatQueryString(HttpServletRequest request) {
+    public String formatQueryString(HttpServletRequest request) {
         return Optional.ofNullable(request.getQueryString()).map(qs -> "?" + qs).orElse(Strings.EMPTY);
     }
 }
